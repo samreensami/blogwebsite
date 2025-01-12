@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+@keyframes moveRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.card-image {
+  animation: moveRight 5s linear infinite;
+}
+.flip-container {
+  perspective: 1000px;
+}
+.flip-card {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+.flip-card:hover {
+  transform: rotateY(180deg);
+}
